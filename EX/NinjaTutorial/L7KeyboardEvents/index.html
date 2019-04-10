@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Turorial #7 Keyboard Events</title>
+	<link rel="stylesheet" type="text/css" href="all.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+	<div id="vue-app">
+		<h1>Keyboard Events</h1>
+		<label>Name:</label>
+		<input type="text" v-on:keyup.enter="logName">
+		<label>Age:</label>
+		<input type="text" v-on:keyup.alt.enter.shift="logAge">
+	</div>
+
+
+	<script src="all.js"></script>
+	
+</body>
+</html>

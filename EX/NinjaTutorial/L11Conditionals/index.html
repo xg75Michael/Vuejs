@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Turorial #11 Conditionals</title>
+	<link rel="stylesheet" type="text/css" href="all.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+	<div id="vue-app">
+		<h1>Conditionals</h1>
+		<button @click="error = !error">Toggle Error</button>
+		<button @click="success = !success">Toggle Success</button>
+		<!-- <p v-if="error">There has been error.</p> -->
+		<!-- <p v-else-if="success">It is success.</p> -->
+		<p v-show="error">There has been error.</p>
+		<p v-show="success">It is success.</p>
+
+	</div>
+
+
+	<script src="all.js"></script>
+	
+</body>
+</html>

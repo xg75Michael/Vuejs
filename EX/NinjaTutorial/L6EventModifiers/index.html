@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Turorial #6 Event Modifiers</title>
+	<link rel="stylesheet" type="text/css" href="all.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+	<div id="vue-app">
+		<h1>Events</h1>
+		<button @click.once="addyear(1)">Add one Year</button>
+		<button v-on:click="subyear(1)">Subtract one Year</button>
+		<br>
+		<button @dblclick="addyear(10)">Double click to Add 10 Years</button>
+		<button v-on:dblclick="subyear(10)">Double click to Subtract 10 Years</button>
+		<p>My age is {{ age }}.</p>
+		<p>The canvas below will display mouse coordinate</p>
+		<div id="canvas" v-on:mousemove="updateXY">{{ x }}, {{ y }}</div>
+		<a v-on:click.prevent="clickme" href="http://www.google.com">Google website prevent behavious</a>
+	</div>
+
+
+	<script src="all.js"></script>
+	
+</body>
+</html>

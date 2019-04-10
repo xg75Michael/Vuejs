@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Turorial #12 Looping with v-for</title>
+	<link rel="stylesheet" type="text/css" href="all.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+	<div id="vue-app">
+		<h1>Looping with v-for</h1>
+		<ul>
+			<li v-for="(character,index) in characters">{{ index + 1 }}.{{ character }}</li>
+		</ul>
+		<ul>
+			<li v-for="(ninja, index) in ninjas">{{ index + 1 }}.{{ ninja.name }} - {{ ninja.age }}</li>
+		</ul>
+		<template v-for="(ninja, index) in ninjas">
+			<h3>{{ index }}.{{ ninja.name }}</h3>
+			<p>{{ ninja.age }}</p>
+		</template>
+		<template v-for="ninja in ninjas">
+			<div v-for="(val, key) in ninja">
+				<p>{{ key }} - {{ val }}</p>
+			</div>
+		</template>
+	</div>
+
+
+	<script src="all.js"></script>
+	
+</body>
+</html>

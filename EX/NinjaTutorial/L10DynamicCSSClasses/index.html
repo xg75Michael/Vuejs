@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Turorial #10 Dynamic CSS Classes</title>
+	<link rel="stylesheet" type="text/css" href="all.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+	<div id="vue-app">
+		<h1>Dynamic CSS</h1>
+		<h2>Example 1</h2>
+		<!-- <div @click="available = !available" v-bind:class="{available: available}">
+			<span>Click to change the bg color</span>
+		</div> -->
+
+		<h2>Example 2</h2>
+		<button @click="nearby = !nearby">Toggle nearby</button>
+		<button @click="available = !available">Toggle available</button>
+		<div v-bind:class="compClasses">
+			<span>Using v-bind to set class</span>
+		</div>
+
+	</div>
+
+
+	<script src="all.js"></script>
+	
+</body>
+</html>

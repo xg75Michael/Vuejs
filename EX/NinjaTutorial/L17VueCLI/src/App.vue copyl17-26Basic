@@ -1,0 +1,45 @@
+<template>
+	<div>
+		<app-header :title="title" @changeTitle="updateTitle($event)"></app-header>
+		<app-ninjas :ninjas="ninjas"></app-ninjas>
+		<app-footer :title="title"></app-footer>
+	</div>
+</template>
+
+
+<script>
+import Header from './components/Header.vue';
+import Footer from './components/Footer.vue';
+import Ninjas from './components/Ninjas.vue';
+
+export default {
+	components: {
+		'app-header': Header,
+		'app-footer': Footer,
+		'app-ninjas': Ninjas
+	},
+  data () {
+    return {
+    	ninjas: [
+      {name:'Michael', speciality: 'Vue Components', show: false},
+      {name:'MMMM', speciality: 'HTML Wizardry', show: false},
+      {name:'Ryo', speciality: 'CLick Event', show: false},
+      {name:'Bro', speciality: 'CSS Style', show: false},
+      {name:'Show', speciality: 'JavaScript', show: false},
+      {name:'Soal', speciality: 'Data Diggin', show: false}
+      ],
+      title: "Vue Ninjass"
+    }
+  },
+  methods: {
+  	updateTitle (updatedTitle) {
+  		this.title = updatedTitle;
+  	}
+  }
+}
+</script>
+
+
+<style>
+
+</style>

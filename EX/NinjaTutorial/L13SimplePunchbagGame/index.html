@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Turorial #13 Simple Punchbag Game</title>
+	<link rel="stylesheet" type="text/css" href="all.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+
+	<div id="vue-app">
+		<h1>Simple Punchbag Game</h1>
+		<!-- bag image -->
+		<div id="bagimg" v-bind:class="{gameover: ended}"></div>
+
+
+		<!-- bag health -->
+		<div id="baghealth">
+			<div v-bind:style="{width: health + '%'}"></div>
+		</div>
+
+
+		<!-- game controls -->
+		<div id="controls">
+			<button @click="puched" v-show="!ended">Punch</button>
+			<button @click="restart">Restart</button>
+		</div>
+
+
+		
+	</div>
+
+
+	<script src="all.js"></script>
+	
+</body>
+</html>

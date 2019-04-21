@@ -1,0 +1,31 @@
+body, html{
+	text-align: center;
+	justify-content: center;
+}
+
+#bagimg{
+	height: 400px;
+	width: 400px;
+	margin: 0 auto;
+	background: url(bagimg.png) center no-repeat;
+	background-size: 100%;
+}
+#bagimg.gameover{
+	background: url(win.png) center no-repeat;
+	background-size: 90%;
+}
+
+#baghealth{
+	width: 300px;
+	margin: 30px auto;
+	border: 2px solid #000;
+}
+
+#baghealth div{
+	height: 20px;
+	background-color: #f00;
+}
+
+#controls{
+	margin: 10px auto;
+}

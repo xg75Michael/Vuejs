@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vue.js Slots</title>
+	<link rel="stylesheet" type="text/css" href="./all.css">
+</head>
+
+<body>
+	<div id="app">
+		<h1>Vue.js Slots Fundamentals</h1>
+
+		<todo-item>
+			Buy Bananas
+		</todo-item>
+
+		<todo-item>
+			Buy Bananas
+			<p>Different line</p>
+		</todo-item>
+
+		<todo-item>
+			Buy Bananas<br>
+			<template #description>Using other slot no relative CSS</template>
+		</todo-item>
+
+		<todo-item>
+			Buy Bananas
+			<template #button-text>SlotButtonText</template>
+		</todo-item>
+
+		<h1>Another EX</h1>
+		<page-layout>
+			This will display within the "main" tag as the body of this page.
+			<p>All this information</p>
+			<p>Multiple lines</p>
+			<p>They are all slot</p>
+			<template #header-slot>This is a template with header-slot id, displaying in the header slot</template>
+			<template #footer-slot>Changed the footer-slot Text using a template with a footer-slot id</template>
+		</page-layout>
+
+	</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+	<script src="./all.js"></script>
+</body>
+</html>

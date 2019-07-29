@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>VueSchool lessons</title>
+	<link rel="stylesheet" type="text/css" href="all.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+</head>
+
+<body>
+	<div id="app" class="container">
+		<div>
+			<h1>{{ header.toLocaleUpperCase() }}</h1>
+			<button class="btn btn-primary" v-if="state" @click="toggelAdd">Add</button>
+			<button class="btn btn-cancel" v-else @click="toggelAdd">Cancel</button>
+		</div>
+		<div v-if="!state" class="add-item-form">
+			<input type="text" v-model="newItem" placeholder="Add a new item" @keyup.enter="addNewItem">
+			<p>{{ inputCount }}/100</p>
+			<button class="btn btn-primary" @click="addNewItem" :disabled="newItem.length === 0">Add Item</button>
+		</div>
+		<ul>
+			<li v-for="(item, index) in reverseItems" :key="index" :class="[item.purchased ? 'strikeout' : '', item.highPriority ? 'priority' : '']" @click="togglePurchasedItem(item)">{{ item.label }}</li>
+		</ul>
+		<p v-if="items.length == 0">Well done, all things have been bought!</p>
+	</div>
+
+	<script type="text/javascript" src="all.js"></script>
+</body>
+</html>

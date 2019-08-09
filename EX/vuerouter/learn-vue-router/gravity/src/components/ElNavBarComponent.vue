@@ -35,7 +35,7 @@
 	export default {
 		data() {
 			return {
-				activeIndex1: '1'
+				activeIndex1: '0'
 			}
 		},
 		computed: {
@@ -43,7 +43,7 @@
 		},
 		methods: {
 			clearActiveIndex() {
-				this.activeIndex1 = '0';
+				this.activeIndex1 = '6';
 			}
 		}
 	}

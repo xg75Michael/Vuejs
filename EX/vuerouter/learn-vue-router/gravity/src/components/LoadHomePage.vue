@@ -1,14 +1,9 @@
 <template>
-	<div class="home-page">
-		<div class="home-page-header">
-			<h1>This is home page header!</h1>
+	<div class="home-page-container">
+		<div class="img-box">
+			<img id="homebanner1" src="../static/HomeBanner.jpg">
 		</div>
-		<div style="height: 100vh; width: 100%; background-color: #888;">
-			<h2 style="color: #fff;">A background IMG here</h2>
-		</div>
-		<div class="home-page-content">
-			<p>Some content</p>
-		</div>
+
 	</div>
 </template>
 
@@ -29,5 +24,18 @@
 </script>
 
 <style scoped>
-	
+	.home-page-container {
+		margin-top: 80px;
+		height: 700px;
+		width: 100%;
+	}
+	.img-box {
+		width: 70%;
+		margin: 0 auto;
+	}
+	#homebanner1 {
+		object-fit: cover;
+		height: 700px;
+		width: 100%;
+	}
 </style>

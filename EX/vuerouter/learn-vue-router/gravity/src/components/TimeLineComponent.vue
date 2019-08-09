@@ -38,6 +38,8 @@
 					<el-card>
 						<h2 style="color: #222; margin-bottom: 10px;">{{ event.eventName }}</h2>
 						<p>{{ event.description }}</p>
+						<span style="float: right; background-color: #222; height: 100px; color: #fff;">Here can have a IMG</span>
+						<!-- TODO Get Img here -->
 					</el-card>
 				</el-timeline-item>
 			</el-timeline>

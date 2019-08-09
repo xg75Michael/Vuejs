@@ -2,7 +2,7 @@
 	<el-footer height="280px" class="footer-gravity-container">
 		<el-divider><p class="footer-gravity">GRAVITY</p></el-divider>
 		<el-row :gutter="20">
-			<el-col :span="8">
+			<el-col :span="6" :offset="2">
 				<div class="footer-col-layout footer-info-left">
 					<p>021 1693969</p>
 					<p>xg75@students.waikato.ac.nz</p>
@@ -14,22 +14,22 @@
 				<div class="footer-col-layout footer-info-center">
 					<el-divider direction="vertical"></el-divider>
 					<div id="footer-icons">
-						<font-awesome-icon :icon="['fab', 'facebook-f']" />
-						<font-awesome-icon :icon="['fab', 'instagram']" />
-						<font-awesome-icon :icon="['fab', 'youtube']" />
-						<font-awesome-icon :icon="['fab', 'linkedin']" />
-						<font-awesome-icon :icon="['fab', 'facebook-messenger']" />
-						<font-awesome-icon :icon="['fab', 'weixin']" />
-						<font-awesome-icon :icon="['fab', 'github']" />
+						<a href="https://www.facebook.com/xiangyan.gao.7" target="_blank"><font-awesome-icon :icon="['fab', 'facebook-f']" /></a>
+						<a href="https://www.instagram.com/mic.hunter/" target="_blank"><font-awesome-icon :icon="['fab', 'instagram']" /></a>
+						<a href="https://www.youtube.com" target="_blank"><font-awesome-icon :icon="['fab', 'youtube']" /></a>
+						<a href="https://www.linkedin.com/" target="_blank"><font-awesome-icon :icon="['fab', 'linkedin']" /></a>
+						<a href="https://www.facebook.com/" target="_blank"><font-awesome-icon :icon="['fab', 'facebook-messenger']" /></a>
+						<a href="https://web.wechat.com" target="_blank"><font-awesome-icon :icon="['fab', 'weixin']" /></a>
+						<a href="https://github.com" target="_blank"><font-awesome-icon :icon="['fab', 'github']" /></a>
 					</div>
 				</div>
 			</el-col>
-			<el-col :span="8">
+			<el-col :span="6">
 				<div class="footer-col-layout footer-info-right">
-					<p>Home</p>
-					<p>Plan Pricing</p>
-					<p>Contact Us</p>
-					<p>About Us</p>
+					<p><a href="/">Home</a></p>
+					<p><a href="/gallery">Our Gallery</a></p>
+					<p><a href="/pricing">Plan Pricing</a></p>
+					<p><a href="/contact">Contact Us</a></p>
 				</div>
 			</el-col>
 		</el-row>
@@ -89,23 +89,34 @@
 		text-align: center;
 	}
 	.footer-col-layout .el-divider--vertical {
-		height: 60px;
+		height: 100px;
 		width: 2px;
-		margin: 60px 0;
+		margin: 40px 0;
 		background-color: #111;
 	}
 	.footer-info-left,
 	.footer-info-right {
 		margin-top: 50px;
 	}
-	.footer-col-layout p {
+	.footer-col-layout p,
+	.footer-col-layout p a {
 		color: #fff;
 		font-size: 16px;
 		font-family: 'Roboto', sans-serif;
 		line-height: 30px;
 	}
+	.footer-col-layout p a {
+		text-decoration: none;
+		letter-spacing: 2px;
+	}
+	.footer-col-layout p a:hover {
+		color: #ffd04b;
+	}
 	#footer-icons {
 		font-size: 30px; /*Control icons size*/
+	}
+	#footer-icons a {
+		line-height: 60px; /*keep position when hover on it*/
 	}
 	#footer-icons .svg-inline--fa {
 		margin: 0 10px;
@@ -130,6 +141,11 @@
 	}
 	.fa-github {
 		color: #211F1F;
+	}
+	.svg-inline--fa:hover {
+		color: #ffd04b;
+		height: 40px;
+		width: 40px;
 	}
 	.footer-copyright {
 		text-align: center;

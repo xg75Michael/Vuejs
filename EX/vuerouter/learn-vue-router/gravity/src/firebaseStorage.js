@@ -3,17 +3,18 @@ import 'firebase/storage'
 
 // config for firebase
 const firebaseConfig = {
-	apiKey: "AIzaSyAQzGJlKMlTGWvh95y9G4LuiKJphP3CxqQ",
-	authDomain: "exgravityinfo.firebaseapp.com",
-	databaseURL: "https://exgravityinfo.firebaseio.com",
-	projectId: "exgravityinfo",
-	storageBucket: "exgravityinfo.appspot.com",
-	messagingSenderId: "941545108852",
-	appId: "1:941545108852:web:48fabf502f1dd1be"
+	apiKey: "*******************",
+	authDomain: "*******************",
+	databaseURL: "*******************",
+	projectId: "*******************",
+	storageBucket: "*******************",
+	messagingSenderId: "*******************",
+	appId: "*******************"
 }
 // initialize firebase
 firebase.initializeApp(firebaseConfig);
 
+// get all HomeBannerImages URL
 const HomeBannerRef = firebase.storage().ref().child('homeCarouselImage');
 var HomeBannerList = [];
 HomeBannerRef.listAll().then(response => {
@@ -25,4 +26,4 @@ HomeBannerRef.listAll().then(response => {
 }).catch(error => console.log(error));
 
 
-export default HomeBannerList
+export {HomeBannerList}

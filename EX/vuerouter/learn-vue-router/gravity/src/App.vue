@@ -11,13 +11,13 @@
 <script>
   // import LoadHomePage from './components/LoadHomePage.vue'
   // import AboutPage from './components/AboutPage.vue'
-  import ElNavBarComponent from './components/ElNavBarComponent.vue'
-  import ElFooterComponent from './components/ElFooterComponent.vue'
   // import TimeLinePage from './components/TimeLineComponent.vue'
   // import GalleryPhotoPage from './components/GalleryPhotoComponent.vue'
   // import PricingPlanPage from './components/PricingPlanComponent.vue'
   // import ContactFormPage from './components/ContactFormComponent.vue'
   import BacktoTopComponent from './components/BacktoTopComponent.vue'
+  import ElNavBarComponent from './components/ElNavBarComponent.vue'
+  import ElFooterComponent from './components/ElFooterComponent.vue'
 
 
 
@@ -25,15 +25,15 @@
   export default {
     name: 'app',
     components: {
-      // LoadHomePage,
-      // AboutPage,
+      BacktoTopComponent,
       ElNavBarComponent,
       ElFooterComponent,
+      // LoadHomePage,
+      // AboutPage,
       // TimeLinePage,
       // GalleryPhotoPage,
       // PricingPlanPage,
-      // ContactFormPage,
-      BacktoTopComponent
+      // ContactFormPage
     },
     computed: {
       returnRoutePath() {

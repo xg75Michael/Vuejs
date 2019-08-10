@@ -9,7 +9,7 @@
 </template>
 
 <script>
-	import HomeBannerList from '../firebaseStorage.js'
+	import { HomeBannerList } from '../firebaseStorage.js'
 
 	export default {
 		data() {
@@ -51,7 +51,6 @@
 	.el-carousel__item.el-carousel__item--card.is-in-stage img {
 		object-fit: cover;
 		height: 100%;
-		width: auto;
 	}
 
 </style>

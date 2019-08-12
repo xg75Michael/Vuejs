@@ -27,7 +27,7 @@
 			<el-col :span="6">
 				<div class="footer-col-layout footer-info-right">
 					<p><a href="/">Home</a></p>
-					<p><a href="/gallery">Our Gallery</a></p>
+					<p><a href="/timeline">TimeLine</a></p>
 					<p><a href="/pricing">Plan Pricing</a></p>
 					<p><a href="/contact">Contact Us</a></p>
 				</div>
@@ -91,7 +91,8 @@
 	.footer-col-layout .el-divider--vertical {
 		height: 100px;
 		width: 2px;
-		margin: 40px 0;
+		margin-top: 40px;
+		margin-bottom: 30px;
 		background-color: #111;
 	}
 	.footer-info-left,

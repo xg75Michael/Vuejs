@@ -9,12 +9,12 @@
 		<el-row :gutter="20" class="header-text3-container">
 			<el-col :span="8" :offset="11"><h2 class="time-line-header-text3">满满的都是热情且坚定的足迹。</h2></el-col>
 		</el-row>
-		<div id="nodeExplianation" style="margin: 40px;">
+		<div id="nodeExplianation">
 			<div id="nodeColorExplian">
-				<div style="height: 15px; width: 15px; background-color: #27ae60; border-radius: 50%; display: inline-block;"></div>
+				<div class="nodeExplian-green"></div>
 				<span> Paid</span>
 				<el-divider direction="vertical"></el-divider>
-				<div style="height: 15px; width: 15px; background-color: #aaa; border-radius: 50%; display: inline-block;"></div>
+				<div class="nodeExplian-grey"></div>
 				<span> No Paid</span>
 			</div>
 			<el-divider></el-divider>
@@ -37,24 +37,20 @@
 					>
 					<el-card>
 						<h2 style="color: #222; margin-bottom: 10px;">{{ event.eventName }}</h2>
-						<p>{{ event.description }}</p>
-						<span style="float: right; background-color: #222; height: 50px; color: #fff;">Here can have a IMG</span>
-						<!-- TODO Get Img here -->
+						<p>
+							<!-- TODO Get Img here -->
+							{{ event.description }}
+						</p>
 					</el-card>
 				</el-timeline-item>
 			</el-timeline>
-			<BacktoTopComponent></BacktoTopComponent>
 		</div>
-
 	</div>
 </template>
 
 <script>
-	import BacktoTopComponent from './BacktoTopComponent.vue'
-
 	export default {
 		components: {
-			BacktoTopComponent
 		},
 		data() {
 			return {
@@ -110,11 +106,27 @@
 
 <style scoped>
 	.time-line-page {
+		min-height: 100vh;
 		width: 80%;
 		margin: auto;
 	}
-	#nodeColorExplian, #nodeIconExplian {
+	#nodeColorExplian,
+	#nodeIconExplian {
 		text-align: right;
+	}
+	#nodeColorExplian .nodeExplian-green {
+		height: 15px;
+		width: 15px;
+		background-color: #27ae60;
+		border-radius: 50%;
+		display: inline-block;
+	}
+	#nodeColorExplian .nodeExplian-grey {
+		height: 15px;
+		width: 15px;
+		background-color: #aaa;
+		border-radius: 50%;
+		display: inline-block;
 	}
 	.el-divider--horizontal {
 		margin: 5px;
@@ -124,5 +136,8 @@
 	}
 	.header-text1-container {
 		margin-top: 40px;
+	}
+	.nodeExplianation {
+		margin: 40px;
 	}
 </style>

@@ -1,10 +1,8 @@
 <template>
 	<div class="text-typing-container">
-		<h1 class="text-container">
-			<span>Join Us to </span>
-			<a href="" class="typewrite" data-period="2000" data-type='[ "Dance.", "Be Attactive.", "Meet People.", "Have Fun." ]'>
-				<span class="wrap"></span>
-			</a>
+		<h1>Jion Us to
+			<span class="typed-text">{{ typeValue }}</span>
+			<span class="cursor" :class="{'typing': typeStatus}">&nbsp</span> <!-- &nbsp = ' ' .. spance -->
 		</h1>
 	</div>
 </template>
@@ -13,68 +11,53 @@
 	export default {
 		data() {
 			return {
-				
+				typeValue: '',
+				typeStatus: false,
+				typeArray: ['Dance', 'Be Attactive', 'Meet People', 'Challenge Yourself'],
+				typingSpeed: 100,
+				erasingSpeed: 100,
+				newTextDelay: 2000,
+				typeArrayIndex: 0,
+				charIndex: 0
 			}
 		},
 		computed: {
 
 		},
 		methods: {
-			
+			typeText() {
+				if (this.charIndex < this.typeArray[this.typeArrayIndex].length) {
+					if (!this.typeStatus) {
+						this.typeStatus = true;
+					}
+					this.typeValue += this.typeArray[this.typeArrayIndex].charAt(this.charIndex)
+					this.charIndex += 1;
+					setTimeout(this.typeText, this.typingSpeed);
+				} else {
+					this.typeStatus = false;
+					setTimeout(this.eraseText, this.newTextDelay);
+				}
+			},
+			eraseText() {
+				if (this.charIndex > 0) {
+					if (!this.typeStatus) {
+						this.typeStatus = true;
+					}
+					this.typeValue = this.typeArray[this.typeArrayIndex].substring(0, this.charIndex - 1);
+					this.charIndex -= 1;
+					setTimeout(this.eraseText, this.erasingSpeed);
+				} else {
+					this.typeStatus = false;
+					this.typeArrayIndex += 1;
+					if (this.typeArrayIndex >= this.typeArray.length) {
+						this.typeArrayIndex = 0;
+					}
+					setTimeout(this.typeText, this.typingSpeed + 1000)
+				}
+			}
 		},
 		created() {
-			var TxtType = function(el, toRotate, period) {
-				this.toRotate = toRotate;
-				this.el = el;
-				this.loopNum = 0;
-				this.period = parseInt(period, 10) || 2000;
-				this.txt = '';
-				this.tick();
-				this.isDeleting = false;
-			};
-			TxtType.prototype.tick = function() {
-				var i = this.loopNum % this.toRotate.length;
-				var fullTxt = this.toRotate[i];
-				if (this.isDeleting) {
-					this.txt = fullTxt.substring(0, this.txt.length - 1);
-				} else {
-					this.txt = fullTxt.substring(0, this.txt.length + 1);
-				}
-				this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-				var that = this;
-				var delta = 200 - Math.random() * 100;
-
-				if (this.isDeleting) { delta /= 2; }
-
-				if (!this.isDeleting && this.txt === fullTxt) {
-					delta = this.period;
-					this.isDeleting = true;
-				} else if (this.isDeleting && this.txt === '') {
-					this.isDeleting = false;
-					this.loopNum++;
-					delta = 500;
-				}
-
-				setTimeout(function() {
-					that.tick();
-				}, delta);
-			};
-			window.onload = function() {
-				var elements = document.getElementsByClassName('typewrite');
-				for (var i=0; i<elements.length; i++) {
-					var toRotate = elements[i].getAttribute('data-type');
-					var period = elements[i].getAttribute('data-period');
-					if (toRotate) {
-						new TxtType(elements[i], JSON.parse(toRotate), period);
-					}
-				}
-				// Inject CSS
-				var css = document.createElement("style");
-				css.type = "text/css";
-				css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-				document.body.appendChild(css);
-			};
+			setTimeout(this.typeText, this.newTextDelay)
 		}
 	}
 </script>
@@ -85,16 +68,28 @@
 	}
 	* {
 		color: #fff;
-		text-decoration: none;
 	}
-	.typewrite {
-		-webkit-text-decoration: #01cccc underline;
-		text-decoration: #01cccc underline;
+	.typed-text {
+		color: #2ecc71;
+		/*-webkit-text-decoration: #01cccc underline;*/
+		/*text-decoration: #01cccc underline;*/
 		text-shadow: 0px 0px 10px rgba(255,255,255,0.7);
-		-webkit-text-stroke: 1px #2c3e50;
+		/*-webkit-text-stroke: 1px #2c3e50;*/
 	}
-	.text-container span,
-	.text-container a {
-		background-color: rgba(0, 0, 0, 0.4);
+	span.cursor {
+		line-height: 100%;
+		display: inline-block;
+		margin-left: 3px;
+		width: 4px;
+		background-color: #fff;
+		animation: cursorBlink 1s infinite;
+	}
+	span.cursor.typing {
+		animation: none;
+	}
+	@keyframes cursorBlink {
+		49% { background-color: #fff; }
+		50% { background-color: transparent; }
+		99% { background-color: transparent; }
 	}
 </style>

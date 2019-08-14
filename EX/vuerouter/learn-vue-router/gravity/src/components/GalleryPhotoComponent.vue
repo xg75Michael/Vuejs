@@ -4,13 +4,14 @@
 		class="gallery-photo-page" 
 		:style="{'minHeight': `${pageMiniHeight+100}px`}"> <!-- 100:give the button space -->
 		<h1 class="gallery-page-header">{{ pageHeader }}</h1>
-		
-		<img 
-			v-for="(url, index) in imageList" 
-			:src="url" 
-			:key="index" 
-			class="item"
-			@click="displayThisImage(url)">
+		<div class="gallery-img-container">
+			<img 
+				v-for="(url, index) in imageList" 
+				:src="url" 
+				:key="index" 
+				class="item"
+				@click="displayThisImage(url)">
+		</div>
 		<router-link to="/contact" v-if="!loading">
 			<el-button 
 				:style="{'top': `${pageMiniHeight+100}px`}"
@@ -30,7 +31,7 @@
 		data() {
 			return {
 				loading: true,
-				pageMiniHeight: null,
+				pageMiniHeight: 1000,
 				imageList: GalleryImagesList,
 				pageHeader: 'Have a peak of our valuable memeries'
 			}
@@ -47,7 +48,7 @@
 			},
 			getClient() {
 				return {
-					width: window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+					width: (window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth) * 0.8,
 					height: window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
 				}
 			},
@@ -67,9 +68,9 @@
 					if (i < colums) {
 						// 在第一行
 						// preset top gap and left gap
-						items[i].style.top = 200 + 'px';
+						items[i].style.top = 20 + 'px';
 						items[i].style.left = (itemWidth + gap) * i + gap + 'px';
-						arr.push(items[i].offsetHeight + 200);
+						arr.push(items[i].offsetHeight + 20);
 					} else {
 						var minHeight = arr[0];
 						var index = 0;
@@ -121,18 +122,25 @@
 	.gallery-page-header {
 		text-align: center;
 		padding-top: 20px;
-
+	}
+	.gallery-img-container {
+		width: 80%;
+		margin-left: auto;
+		margin-right: auto;
+		position: relative;
+		min-height: 100vh;
 	}
 	.gallery-photo-page {
 		min-height: 100vh;
 		background-color: #ddd;
 		text-align: center;
+		justify-content: center;
 	}
 	.item {
 		visibility: hidden;
 		float: left;
 		display: flex;
-		width: 305px;
+		width: 19%;
 		position: absolute;
 		border-radius: 2%;
 	}

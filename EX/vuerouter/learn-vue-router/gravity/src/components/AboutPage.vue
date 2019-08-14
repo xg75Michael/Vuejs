@@ -12,7 +12,7 @@
 				<el-col :span="14">
 					<div class="top-content-left1">
 						<h2>Who We Are</h2>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m massa. Cum sociis natoque penatibus et m massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat masac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugi</p>
+						<p>{{ topContentLeft1 }}</p>
 					</div>
 				</el-col>
 				<el-col :span="10">
@@ -26,7 +26,7 @@
 				<el-col :span="14">
 					<div class="top-content-right2">
 						<h2>What We Do</h2>
-						<p>sa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis via, venenatis via, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputamper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend </p>
+						<p>{{ topContentRight2 }}</p>
 					</div>
 				</el-col>
 			</el-row>
@@ -34,8 +34,69 @@
 		<div class="main-content-mid">
 			<div class="main-parallax-img">
 				<TextTypingEffectComponent class="parallax-cover-text"></TextTypingEffectComponent>
-				<h1 class="mid-bottom-header">Meet Our Team</h1>
-				<p class="mid-bottom-content">sa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis via, venenatis via, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputamper nisi. Aenean vulputate eleifend tellus. Aenean leo lig</p>
+			</div>
+		</div>
+		<div class="main-content-bottom">
+			<h1 class="mid-bottom-header">Meet Our Team</h1>
+			<MembersAvatarComponent></MembersAvatarComponent>
+			<hr>
+			<div class="member-content">
+				<el-row>
+					<el-col :span="4" :offset="1">
+						<b>Name1 - Position: </b>
+					</el-col>
+					<el-col :span="19">
+						<p>sociis natoque penatibus et m massa. ciis natoque penatibus et m massa. Cum soci</p>
+					</el-col>
+				</el-row>
+				<el-row>
+					<el-col :span="4" :offset="1">
+						<b>Name1 - Position: </b>
+					</el-col>
+					<el-col :span="19">
+						<p>sociis natoque penatibus et m massa. Cum socinatoque penatibus et m massa. Cum socinatoque penatibus et m masstibus m sociis natoque penatibus et m massa. Cum soci</p>
+					</el-col>
+				</el-row>
+				<el-row>
+					<el-col :span="4" :offset="1">
+						<b>Name1 - Position: </b>
+					</el-col>
+					<el-col :span="19">
+						<p>sociis natoque penatibatim massa. Cuet m massa. Cum socinatoque penatibus et m massa. Cum sociis natoque penatibus et m massa. Cum soci</p>
+					</el-col>
+				</el-row>
+				<el-row>
+					<el-col :span="4" :offset="1">
+						<b>Name1 - Position: </b>
+					</el-col>
+					<el-col :span="19">
+						<p>sociis natoque penatib sociis natoque penatibus et m massa. Cum soci</p>
+					</el-col>
+				</el-row>
+				<el-row>
+					<el-col :span="4" :offset="1">
+						<b>Name1 - Position: </b>
+					</el-col>
+					<el-col :span="19">
+						<p>sociis natoque penatibu massa. Cum sociis natoque penatibus et m massa. Cum soci</p>
+					</el-col>
+				</el-row>
+				<el-row>
+					<el-col :span="4" :offset="1">
+						<b>Name1 - Position: </b>
+					</el-col>
+					<el-col :span="19">
+						<p>sociis natoque penatibus tibus et m massa. Cum socinatoque penatibus et m massa. Cum sociis natoque penatibus et m massa. Cum soci</p>
+					</el-col>
+				</el-row>
+				<el-row>
+					<el-col :span="4" :offset="1">
+						<b>Name1 - Position: </b>
+					</el-col>
+					<el-col :span="19">
+						<p>sociis natoque penatibus et assa. Cum socinatoque penatibus et m massa. Cum sociis natoque penatibus et m massa. Cum soci</p>
+					</el-col>
+				</el-row>
 			</div>
 		</div>
 	</div>
@@ -43,16 +104,20 @@
 
 <script>
 	import TextTypingEffectComponent from './TextTypingEffectComponent.vue'
+	import MembersAvatarComponent from './MembersAvatarComponent.vue'
 
 	export default {
 		components: {
-			TextTypingEffectComponent
+			TextTypingEffectComponent,
+			MembersAvatarComponent
 		},
 		data() {
 			return {
 				showHeaderH: true,
 				youtubeURL: 'https://www.youtube.com/embed/FQUSOpl2Lqs?controls=0',
-				autoString: '&autoplay=1'
+				autoString: '&autoplay=1',
+				topContentLeft1: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m massa. Cum sociis natoque penatibus et m massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat masac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugi',
+				topContentRight2: 'sa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis via, venenatis via, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputamper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend',
 			}
 		},
 		computed: {
@@ -166,14 +231,15 @@
 	}
 	.top-content-right2 p,
 	.top-content-left1 p {
-		width: 90%;
+		width: 80%;
+		text-align: justify;
 		margin-left: auto;
 		margin-right: auto;
 	}
 
 	.main-content-mid {
 		background-color: #ddd;
-		height: 100vh;
+		min-height: 40vh;
 	}
 	.main-parallax-img {
 		text-align: center;
@@ -186,10 +252,26 @@
 		background-size: cover;
 	}
 	.parallax-cover-text {
-		line-height: 40vh;
+		padding-top: 15vh;
+		padding-bottom: 15vh;
 		font-size: 40px;
 	}
 	.mid-bottom-header {
 		margin: 40px;
+	}
+	.member-content {
+		display: block;
+		width: 80%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: justify;
+	}
+	.main-content-bottom {
+		text-align: center;
+		padding-bottom: 80px
+	}
+	.member-content .el-row {
+		margin-top: 10px;
 	}
 </style>

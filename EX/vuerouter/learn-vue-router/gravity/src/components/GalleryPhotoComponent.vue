@@ -90,7 +90,6 @@
 				var bottomTopHeigh = items[items.length - 1].offsetTop;
 				// give some space at the bottom
 				this.pageMiniHeight = bottomTopHeigh + 400
-				// console.log(document.readyState)
 				for (let i=0; i<items.length; i++) {
 					items[i].style.visibility = 'visible'
 				}
@@ -100,16 +99,14 @@
 			setTimeout(this.changeLoading, 2200)
 		},
 		mounted() {
-			// TOTO
-			// Fix the bug when refresh on gallery page, layout error
-			setTimeout(this.imgWaterFall, 2000)
+			// Make it responsive when resize the window size
+			this.$nextTick(function() {
+				window.addEventListener('resize', this.imgWaterFall);
+				setTimeout(this.imgWaterFall, 2000)
+			})
 		},
-		upadated() {
-			// TODO
-			// Does not work when resize the window
-			// window.onresize = function () {
-			// 	waterFall();
-			// }
+		destroyed() {
+			window.removeEventListener('resize', this.imgWaterFall);
 		}
 	}
 </script>
@@ -140,7 +137,7 @@
 		visibility: hidden;
 		float: left;
 		display: flex;
-		width: 19%;
+		width: 205px;
 		position: absolute;
 		border-radius: 2%;
 	}

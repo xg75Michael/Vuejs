@@ -127,7 +127,6 @@
 			fadeHeader() {
 				// check if there is already "autoplay"
 				if (this.youtubeURL.match(this.autoString)) {
-					// console.log('contain')
 				} else {
 					this.youtubeURL += this.autoString
 					this.showHeaderH = false

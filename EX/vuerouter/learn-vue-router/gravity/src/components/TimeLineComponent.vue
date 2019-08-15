@@ -38,7 +38,7 @@
 					<el-card>
 						<h2 style="color: #222; margin-bottom: 10px;">{{ event.eventName }}</h2>
 						<p>
-							<!-- TODO Get Img here -->
+							<!-- TODO - Add Img here -->
 							{{ event.description }}
 						</p>
 					</el-card>

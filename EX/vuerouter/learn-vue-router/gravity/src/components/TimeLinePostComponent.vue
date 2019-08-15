@@ -36,6 +36,11 @@
 				<el-form-item label="Event Description" prop="desc">
 					<el-input type="textarea" v-model="danceEvent.desc" :rows="5"></el-input>
 				</el-form-item>
+				<!-- Using different key to ContactForm one. -->
+				<!-- Does not set call-back function -->
+				<div id="recaptcha" class="g-recaptcha"
+					data-sitekey="6LcuG7MUAAAAAHGBH7Mvv8VrZEAD1br9J-cLDvic"
+					data-size="invisible"></div>
 				<el-form-item>
 					<el-button type="primary" @click="submitForm('danceEvent')">Submit</el-button>
 					<el-button @click="resetForm('danceEvent')">Reset</el-button>
@@ -81,6 +86,7 @@
 			submitForm(formName) {
 				this.$refs[formName].validate((valid) => {
 					if (valid) {
+						grecaptcha.execute();
 						this.$http.post('https://exgravityinfo.firebaseio.com/timelines.json', {
 							eventName: this.danceEvent.name,
 							eventDate: this.danceEvent.theDate,
@@ -108,6 +114,15 @@
 			},
 			resetForm(formName) {
 				this.$refs[formName].resetFields();
+			}
+		},
+		mounted() {
+			if (typeof grecaptcha === "undefined") {
+				var script = document.createElement("script");
+				script.src = "https://www.google.com/recaptcha/api.js";
+				document.head.appendChild(script)
+			} else {
+
 			}
 		}
 	}

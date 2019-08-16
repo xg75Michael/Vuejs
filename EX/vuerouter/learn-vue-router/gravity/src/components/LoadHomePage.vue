@@ -5,26 +5,32 @@
 				<img class="homeBannerImgs" :src="img">
 			</el-carousel-item>
 		</el-carousel>
+		<!-- TODO - Make a animation Number effect -->
+		<!-- <div>Number of Gallery Images: {{ galleyLength }}</div> -->
 	</div>
 </template>
 
 <script>
 	import { HomeBannerList } from '../firebaseStorage.js'
+	import { GalleryImagesList } from '../firebaseStorage.js'
 
 	export default {
 		data() {
 			return {
-				imgList: HomeBannerList
+				imgList: HomeBannerList,
+				GalleryImagesList: GalleryImagesList
 			}
 		},
 		computed: {
-			
+			galleyLength() {
+				return this.GalleryImagesList.length;
+			}
 		},
 		methods: {
 
 		},
 		created() {
-
+			
 		}
 	}
 </script>

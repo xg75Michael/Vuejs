@@ -35,6 +35,11 @@
       // PricingPlanPage,
       // ContactFormPage
     },
+    data() {
+      return {
+        
+      }
+    },
     computed: {
       returnRoutePath() {
         return this.$route.path

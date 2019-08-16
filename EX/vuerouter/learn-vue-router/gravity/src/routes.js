@@ -7,7 +7,7 @@ import PricingPlanPage from './components/PricingPlanComponent.vue'
 import ContactFormPage from './components/ContactFormComponent.vue'
 
 export default [
-	{path: '/', component: LoadHomePage },
+	{path: '/', component: LoadHomePage},
 	{path: '/about', component: AboutPage},
 	{path: '/timeline', component: TimeLinePage},
 	{path: '/timelinepost', component: TimeLinePostPage},

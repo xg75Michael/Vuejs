@@ -1,13 +1,13 @@
 <template>
 	<div class="time-line-page">
 		<el-row :gutter="20" class="header-text1-container">
-			<el-col :span="6" :offset="1"><h2 class="time-line-header-text1">自2016年舞团创建以来，</h2></el-col>
+			<el-col :span="13" :offset="1"><h2 class="time-line-header-text1">自2016年舞团创建以来，</h2></el-col>
 		</el-row>
 		<el-row :gutter="20" class="header-text2-container">
-			<el-col :span="6" :offset="7"><h2 class="time-line-header-text2">我们携手至今，</h2></el-col>
+			<el-col :span="13" :offset="7"><h2 class="time-line-header-text2">我们携手至今，</h2></el-col>
 		</el-row>
 		<el-row :gutter="20" class="header-text3-container">
-			<el-col :span="8" :offset="11"><h2 class="time-line-header-text3">满满的都是热情且坚定的足迹。</h2></el-col>
+			<el-col :span="13" :offset="11"><h2 class="time-line-header-text3">满满的都是热情且坚定的足迹。</h2></el-col>
 		</el-row>
 		<div id="nodeExplianation">
 			<div id="nodeColorExplian">
@@ -54,11 +54,13 @@
 		},
 		data() {
 			return {
-				timeLineEventArrs: []
+				timeLineEventArrs: [],
 			}
 		},
 		computed: {
-			
+			timeLineLength() {
+				return this.timeLineEventArrs.length;
+			}
 		},
 		methods: {
 			checkNodeColorType(event) {
@@ -100,11 +102,17 @@
 					var sortTempArr = tempArr.sort(eventDateCompare("eventDate"));
 					this.timeLineEventArrs = sortTempArr
 				})
+		},
+		mounted() {
+			
 		}
 	}
 </script>
 
 <style scoped>
+	.el-col h2 {
+		font-size: 30px;
+	}
 	.time-line-page {
 		min-height: 100vh;
 		width: 80%;
@@ -139,5 +147,11 @@
 	}
 	.nodeExplianation {
 		margin: 40px;
+	}
+	.el-card__body h2 {
+		font-size: 25px;
+	}
+	.el-card__body p {
+		font-size: 15px;
 	}
 </style>

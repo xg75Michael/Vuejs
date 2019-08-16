@@ -14,13 +14,42 @@
 				<div class="footer-col-layout footer-info-center">
 					<el-divider direction="vertical"></el-divider>
 					<div id="footer-icons">
-						<a href="https://www.facebook.com/xiangyan.gao.7" target="_blank"><font-awesome-icon :icon="['fab', 'facebook-f']" /></a>
-						<a href="https://www.instagram.com/mic.hunter/" target="_blank"><font-awesome-icon :icon="['fab', 'instagram']" /></a>
-						<a href="https://www.youtube.com" target="_blank"><font-awesome-icon :icon="['fab', 'youtube']" /></a>
-						<a href="https://www.linkedin.com/" target="_blank"><font-awesome-icon :icon="['fab', 'linkedin']" /></a>
-						<a href="https://www.facebook.com/" target="_blank"><font-awesome-icon :icon="['fab', 'facebook-messenger']" /></a>
-						<a href="https://web.wechat.com" target="_blank"><font-awesome-icon :icon="['fab', 'weixin']" /></a>
-						<a href="https://github.com" target="_blank"><font-awesome-icon :icon="['fab', 'github']" /></a>
+						<el-popover
+							placement="top"
+							width="200"
+							trigger="hover"
+							content="Click to check our Facebook page.">
+							<a href="https://www.facebook.com/xiangyan.gao.7" target="_blank" slot="reference"><font-awesome-icon :icon="['fab', 'facebook-f']" /></a>
+						</el-popover>
+						<el-popover
+							placement="top"
+							width="200"
+							trigger="hover"
+							content="Click to check our instagram page.">
+							<a href="https://www.instagram.com/mic.hunter/" target="_blank" slot="reference"><font-awesome-icon :icon="['fab', 'instagram']" /></a>
+						</el-popover>
+						<el-popover
+							placement="top"
+							width="100"
+							trigger="hover"
+							content="Our Youtube page">
+							<a href="https://www.youtube.com" target="_blank" slot="reference"><font-awesome-icon :icon="['fab', 'youtube']" /></a>
+						</el-popover>
+						<el-popover
+							placement="top"
+							width="200"
+							trigger="hover">
+							<div><img src="../static/WechatMichael.jpg" style="width: 200px;"></div>
+							<font-awesome-icon :icon="['fab', 'weixin']" slot="reference"/>
+						</el-popover>
+						<el-popover
+							placement="top"
+							width="150"
+							trigger="hover"
+							content="xg75Michael GitHub page">
+							<a href="https://github.com/xg75Michael" target="_blank" slot="reference"><font-awesome-icon :icon="['fab', 'github']" /></a>
+						</el-popover>
+						
 					</div>
 				</div>
 			</el-col>
@@ -50,7 +79,7 @@
 
 		},
 		methods: {
-
+			
 		}
 	}
 </script>
@@ -133,9 +162,6 @@
 	}
 	.fa-linkedin {
 		color: #0077B5;
-	}
-	.fa-facebook-messenger {
-		color: #0084ff;
 	}
 	.fa-weixin {
 		color: #09b83e;

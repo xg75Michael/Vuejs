@@ -1,4 +1,5 @@
 module.exports = {
+	plugins: ['@vuepress/back-to-top'],
 	title: 'Hello Vuepress module',
 	description: 'Just playing around',
 	themeConfig: {

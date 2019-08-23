@@ -1,3 +1,7 @@
+---
+pageClass: custom-page-class
+---
+
 # Advance
 ## markdown语法测试 `##`
 ###### 基本用法 `######`
